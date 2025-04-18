@@ -1,7 +1,10 @@
 # VisionMaster Helper Script
 
-这是一个为海康机器人 VisionMaster 平台开发的辅助脚本，由作者：SHISUYO个人兴趣完成。  
-脚本使用 VisionMaster 提供的公开接口编写，用于执行 [基于开源项目Umi-OCR(https://github.com/hiroi-sora/Umi-OCR)提供的HTTP接口,由海康机器人视觉算法软件VisionMaster中的脚本来进行图片的裁剪，转码Base64，上传，获取OCR数据]。
+这是一个为海康机器人 VisionMaster 平台开发的辅助脚本，由作者 **SHISUYO** 个人兴趣完成。  
+脚本使用 VisionMaster 提供的公开接口编写，用于执行：
+
+> 基于开源项目 [Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) 提供的 HTTP 接口，  
+> 由 VisionMaster 中的脚本实现图片裁剪、转码（Base64）、上传并获取 OCR 数据。
 
 > ⚠️ 本项目与任何单位或工作项目无关，脚本运行依赖 VisionMaster 平台，仅供学习与参考用途。
 
@@ -9,42 +12,51 @@
 
 ## ✨ 功能简介
 
-- 可直接将软件内的IMAGE变量直接转换为Base64编码名上传到服务器中，并获取图片中文字信息(注意断句)
-- 可直接将软件内的IMAGE变量直接以Jpg,Bmp,Png.Tif等格式存入计算机本地磁盘中
-- (或者是共享文件夹或者是网络驱动器,前提是你已经挂载到你的计算机内并且你已经为其分配盘符并且你有增删改查权限)
+- 将软件内的 `IMAGE` 变量转换为 Base64 编码并上传至服务器，获取文字识别结果。
+- 将 `IMAGE` 变量保存为 JPG、BMP、PNG、TIF 等格式至本地磁盘。
+- 支持将图像保存至共享文件夹或网络驱动器（前提是已正确挂载并拥有读写权限）。
 
 ---
 
 ## 🚀 使用方式
 
-(本脚本仅在VM4.3以上版本进行测试,4.2及其更低版本还请使用者自行测试,由使用者自行测试导致的时间以及学习成本与作者无关)
-双击打开“Umi-OCR-Socket.sol”文件即可打开程序文件
-文件内有Image,Cut-Image,OCR-Socket,Save-Test模块
-其中Save-Test和Cut-Image仅供测试使用,核心以OCR-Socket模块为主
-使用前,请先打开OCR-Socket模块中的编辑程序集
-并将  “Microsoft.Extensions.Identity.Core.DLL”,
-      “Newtonsoft.Json.DLL”,
-      “System.Drawing.DLL”删除
-并重新导入这三个必要DLL文件
-否则预编译时会出现缺少Using指令集报错
-详细使用信息及其关键指令信息在脚本备注里已做尽数提示
+> ⚙️ 本脚本仅在 VisionMaster 4.3 以上版本测试通过，  
+> 4.2 及更低版本用户请自行测试，使用造成的时间或学习成本与作者无关。
 
-必要变量提示信息：
-in1:  此变量接收由脚本外部输入的图像变量
-      请注意,这里不可选择选项中的灰度图像,无论Image模块里面的是RGB24还是MONO8
-      请务必选择图像源或者是不带灰度图像后缀的图像变量
+### 🗂 脚本结构
+
+- `Umi-OCR-Socket.sol`：主程序文件
+  - `Image`
+  - `Cut-Image`
+  - `OCR-Socket`（核心模块）
+  - `Save-Test`
+
+> `Save-Test` 与 `Cut-Image` 为测试模块，实际使用推荐仅保留 `OCR-Socket`以及`Image`。
+
+### 📌 使用步骤
+
+1. 打开 `OCR-Socket` 模块的编辑程序集。
+2. 删除以下 DLL 引用：
+   - `Microsoft.Extensions.Identity.Core.DLL`
+   - `Newtonsoft.Json.DLL`
+   - `System.Drawing.DLL`
+3. 重新导入上述 DLL 文件（确保路径正确）。
+4. 按脚本内备注提示使用相应变量。
+
+### 📥 变量说明
+
+- **in1**：接收脚本外部传入的图像变量。  
+  请勿使用灰度图变量，务必选择原始图像源。
 
 ---
 
 ## 📦 项目依赖
 
-本脚本项目依赖以下外部库：
+- VisionMaster 平台（及其 `Script.Methods` 类库）
+- [.NET Framework 标准库](https://learn.microsoft.com/dotnet/)
+- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)（MIT License）
 
-- 脚本运行依赖 VisionMaster 工业视觉平台，特别是其提供的 `Script.Methods` 类库。
-- [.NET Framework 标准库](https://learn.microsoft.com/dotnet/) （由 Microsoft 提供）
-- [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) — JSON 序列化工具，遵循 MIT License
-
-以上库无需随项目一起分发，用户在使用时需确保本地环境支持。
+> 以上库用户需在本地环境中确保可用，无需随项目一同分发。
 
 ---
 
@@ -57,4 +69,5 @@ in1:  此变量接收由脚本外部输入的图像变量
 
 ## 👤 作者
 
-SHISUYO(施苏悠) - [https://github.com/SHISUYO]
+**SHISUYO (施苏悠)**  
+🔗 [https://github.com/SHISUYO](https://github.com/SHISUYO)
