@@ -40,7 +40,7 @@
    - `Microsoft.Extensions.Identity.Core.DLL`
    - `Newtonsoft.Json.DLL`
    - `System.Drawing.DLL`
-3. 重新导入上述 DLL 文件（确保路径正确）。
+3. 重新导入上述 DLL 文件（在DLL文件夹内已经有了）。
 4. 按脚本内备注提示使用相应变量。
 
 ### 📥 变量说明
