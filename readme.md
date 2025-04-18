@@ -10,7 +10,8 @@
 ## ✨ 功能简介
 
 - 可直接将软件内的IMAGE变量直接转换为Base64编码名上传到服务器中，并获取图片中文字信息(注意断句)
-- 可直接将软件内的IMAGE变量直接以Jpg,Bmp,Png.Tif等格式存入计算机本地磁盘中(或者是共享文件夹或者是网络驱动器,前提是你已经挂载到你的计算机内并且你已经为其分配盘符并且你有增删改查权限)
+- 可直接将软件内的IMAGE变量直接以Jpg,Bmp,Png.Tif等格式存入计算机本地磁盘中
+- (或者是共享文件夹或者是网络驱动器,前提是你已经挂载到你的计算机内并且你已经为其分配盘符并且你有增删改查权限)
 
 ---
 
@@ -18,13 +19,20 @@
 
 (本脚本仅在VM4.3以上版本进行测试,4.2及其更低版本还请使用者自行测试,由使用者自行测试导致的时间以及学习成本与作者无关)
 双击打开“Umi-OCR-Socket.sol”文件即可打开程序文件
-文件内有Image,Cut-Image,OCR-Socket,Save-Test模块，其中Save-Test和Cut-Image仅供测试使用,核心以OCR-Socket模块为主
-使用前,请先打开OCR-Socket模块中的编辑程序集，并将“Microsoft.Extensions.Identity.Core.DLL”,“Newtonsoft.Json.DLL”,“System.Drawing.DLL”删除,并重新导入这三个必要DLL文件
+文件内有Image,Cut-Image,OCR-Socket,Save-Test模块
+其中Save-Test和Cut-Image仅供测试使用,核心以OCR-Socket模块为主
+使用前,请先打开OCR-Socket模块中的编辑程序集
+并将  “Microsoft.Extensions.Identity.Core.DLL”,
+      “Newtonsoft.Json.DLL”,
+      “System.Drawing.DLL”删除
+并重新导入这三个必要DLL文件
 否则预编译时会出现缺少Using指令集报错
 详细使用信息及其关键指令信息在脚本备注里已做尽数提示
 
 必要变量提示信息：
-in1：此变量接收由脚本外部输入的图像变量,请注意,这里不可选择选项中的灰度图像,无论Image模块里面的是RGB24还是MONO8，请务必选择图像源或者是不带灰度图像后缀的图像变量
+in1:  此变量接收由脚本外部输入的图像变量
+      请注意,这里不可选择选项中的灰度图像,无论Image模块里面的是RGB24还是MONO8
+      请务必选择图像源或者是不带灰度图像后缀的图像变量
 
 ---
 
@@ -49,4 +57,4 @@ in1：此变量接收由脚本外部输入的图像变量,请注意,这里不可
 
 ## 👤 作者
 
-SHISUYO(施苏悠) - [https://github.com/SHENCHUYU2005]
+SHISUYO(施苏悠) - [https://github.com/SHISUYO]
