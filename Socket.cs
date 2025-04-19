@@ -89,7 +89,7 @@ public partial class UserScript : ScriptMethods, IProcessMethods
 
                 // 保存为 PNG 或 JPEG
                 
-    			string filePath = @"C:\Users\SHISUYO\Desktop\ZIP\DLL\aaa.jpg";	//设置存图路径以及文件名字
+    			string filePath = @"C:\Users\XXX\Desktop\ZIP\DLL\aaa.jpg";	//设置存图路径以及文件名字
     			bitmap.Save(filePath, ImageFormat.Jpeg);	//你要存JPG就改成ImageFormat.Jpeg，PNG就改成Png,BMP就改成Bmp，补全都有的
                 
                /*
@@ -141,7 +141,7 @@ public partial class UserScript : ScriptMethods, IProcessMethods
                 }
             };
 
-            string url = "http://nas.shisuyo.top:41235/api/ocr";	//测试服务器,此服务器需要IPV6才可连接,本地就填127.0.0.1:1224/api/ocr
+            string url = "http://192.168.31.4:41235/api/ocr";	//本地就填127.0.0.1:1224/api/ocr
             string jsonData = JsonConvert.SerializeObject(postData);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
